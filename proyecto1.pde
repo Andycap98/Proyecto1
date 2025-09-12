@@ -20,11 +20,28 @@ void draw() {
     dibujarAsteroide(x, y, r);
   }
 
- 
+ dibujarNave(100, height/2, 80);
   
 }
 
 
+
+void dibujarNave(float x, float y, float s) {
+  fill(100, 200, 255);
+  noStroke();
+
+  // Cuerpo principal (punta hacia la derecha)
+  triangle(x, y, x - s/2, y - s/2, x - s/2, y + s/2);
+
+  // Cabina
+  fill(255);
+  ellipse(x - s/3, y, s/3, s/3);
+
+  // Alas
+  fill(150, 200, 255);
+  rect(x - s/2, y - s/2, s/6, s/2);
+  rect(x - s/2, y, s/6, s/2);
+}
 
 
 void dibujarAsteroide(float x, float y, float r) {
